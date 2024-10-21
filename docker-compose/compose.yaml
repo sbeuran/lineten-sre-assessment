@@ -1,0 +1,5 @@
+services:
+  web:
+    build: ../custom-http-server
+    ports:
+      - "8081:8080"
