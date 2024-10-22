@@ -9,8 +9,8 @@ Solution for the SRE assessment for LineTen. This repository contains the code, 
 This repository contains the implementation for the SRE assessment task provided by LineTen. The objective is to containerize an application, deploy it to Azure Kubernetes Service (AKS), and manage the infrastructure using Terraform. A CI/CD pipeline is configured to automate deployments upon every commit.
 
 ## Application Details
-- The application is a simple "Hello World" service that exposes an endpoint (`/`) to verify successful deployment.
-- The code is written in [Language of your choice].
+- The application is a simple service that shows your IP address.
+- The code is written in Python.
 
 ## Deployment and Infrastructure
 - **Cloud Provider**: Azure
@@ -72,6 +72,10 @@ Other way, with autoapproval enabled:
 ```bash
 terraform apply --var-file=tfvars/changeme.tfvars --auto-approve
 ```
+![image](https://github.com/user-attachments/assets/8b997443-cd20-4edd-b9a4-80f45873d979)
+Resources in Azure account:
+![image](https://github.com/user-attachments/assets/96d5d4f5-1ca8-4dbf-aa27-3ed839b2e1f4)
+
 
 6. When this setup needs to be destroyed, execute the following:
 ```bash
