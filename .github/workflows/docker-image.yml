@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build the Docker image
+      run: cd custom-http-server; docker build . --tag sbeuran/lineten-http-server:latest; cd ..;
+    
+    - name: Login to dockerhub registry
+      run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+    
+    - name: Push the Docker image
+      run: docker push sbeuran/lineten-http-server:latest
