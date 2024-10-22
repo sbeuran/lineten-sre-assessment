@@ -105,8 +105,8 @@ export KUBECONFIG=/tmp/kubeconfig
 ```bash
 kubectl get pods -n lineten
 ```
-NAME                                 READY   STATUS    RESTARTS   AGE
-lineten-deployment-ddbb89d76-snwqg   1/1     Running   0          95s
+![image](https://github.com/user-attachments/assets/ac99a448-43db-48ad-a5ba-0fcea64139b7)
+
 ## Verify the service is running:
 
 1. Find the service IP:
