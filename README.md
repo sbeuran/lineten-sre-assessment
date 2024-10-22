@@ -24,6 +24,8 @@ For local development and testing, Docker Compose can be used:
 cd docker-compose
 docker-compose up
 ```
+![image](https://github.com/user-attachments/assets/5911abcd-4310-4ee4-a889-1ee86c708534)
+
 
 ## Setting up everything to apply terraform config
 1. Install `azure cli` using the instructions from Microsoft website
