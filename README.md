@@ -62,7 +62,7 @@ cd terraform
 5. Apply the configuration, when prompted - verify configuration which will be applied and approve this action.
 
 ```bash
-terraform apply --var-file=tfvars/changeme.tfvars --auto-approve
+terraform apply --var-file=tfvars/changeme.tfvars
 ```
 
 Other way, with autoapproval enabled:
@@ -73,7 +73,7 @@ terraform apply --var-file=tfvars/changeme.tfvars --auto-approve
 
 6. When this setup needs to be destroyed, execute the following:
 ```bash
-terraform destroy --var-file=tfvars/changeme.tfvars --auto-approve
+terraform destroy --var-file=tfvars/changeme.tfvars
 ```
 Other way, with autoapproval enabled:
 
@@ -81,3 +81,39 @@ Other way, with autoapproval enabled:
 terraform apply --var-file=tfvars/changeme.tfvars --auto-approve
 ```
 
+## Get kubeconfig data from created cluster
+
+1. Install `kubectl`
+2. To get the kubeconfig data execute:
+```bash
+terraform output -raw kube_config
+```
+
+3. Save the output to the file, say `/tmp/kubeconfig`
+4. Save the output to the `KUBECONFIG_DATA` repository secret in github.
+5. Set location of kubeconfig by executing
+```bash
+export KUBECONFIG=/tmp/kubeconfig
+```
+6. Verify the app is running
+```bash
+kubectl get pods -n lineten
+```
+
+## Verify the service is running:
+
+1. Find the service IP:
+```bash
+kubectl get service lineten-service -n lineten
+```
+
+The output will be similar to the following:
+```
+$ kubectl get service lineten-service -n lineten
+NAME              TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE
+lineten-service   LoadBalancer   10.0.181.78   72.144.131.215   8080:30464/TCP   14s
+```
+
+Where 72.144.131.215 is the external IP on which our service is available
+
+2. Navigate to the 72.144.131.215:8080 in browser. There you'll see a page showing your IP address.
