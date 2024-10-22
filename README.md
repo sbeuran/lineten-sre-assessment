@@ -105,7 +105,8 @@ export KUBECONFIG=/tmp/kubeconfig
 ```bash
 kubectl get pods -n lineten
 ```
-
+NAME                                 READY   STATUS    RESTARTS   AGE
+lineten-deployment-ddbb89d76-snwqg   1/1     Running   0          95s
 ## Verify the service is running:
 
 1. Find the service IP:
@@ -116,10 +117,13 @@ kubectl get service lineten-service -n lineten
 The output will be similar to the following:
 ```
 $ kubectl get service lineten-service -n lineten
-NAME              TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE
-lineten-service   LoadBalancer   10.0.181.78   72.144.131.215   8080:30464/TCP   14s
+NAME              TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)          AGE
+lineten-service   LoadBalancer   10.0.39.163   4.182.191.194   8080:31212/TCP   106s
 ```
 
-Where 72.144.131.215 is the external IP on which our service is available
+Where 4.182.191.194 is the external IP on which our service is available
 
-2. Navigate to the 72.144.131.215:8080 in browser. There you'll see a page showing your IP address.
+2. Navigate to the 4.182.191.194:8080 in browser. There you'll see a page showing your IP address.
+
+![image](https://github.com/user-attachments/assets/3fa3df01-1b94-429b-9321-f2283889f0cf)
+
