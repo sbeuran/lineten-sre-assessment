@@ -116,14 +116,15 @@ kubectl get service lineten-service -n lineten
 
 The output will be similar to the following:
 ```
-$ kubectl get service lineten-service -n lineten
-NAME              TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)          AGE
-lineten-service   LoadBalancer   10.0.39.163   4.182.191.194   8080:31212/TCP   106s
+![image](https://github.com/user-attachments/assets/82469c07-f0ed-4c23-80fb-41a3cdf109c1)
+
+
 ```
 
-Where 4.182.191.194 is the external IP on which our service is available
+Where 98.67.238.159 is the external IP on which our service is available
 
-2. Navigate to the 4.182.191.194:8080 in browser. There you'll see a page showing your IP address.
+2. Navigate to the 98.67.238.159:8080 in browser. There you'll see a page showing your IP address.
 
-![image](https://github.com/user-attachments/assets/3fa3df01-1b94-429b-9321-f2283889f0cf)
+![image](https://github.com/user-attachments/assets/11080dda-9b4c-44f4-bd42-813282c8a26f)
+
 
