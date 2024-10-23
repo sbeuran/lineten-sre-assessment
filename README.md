@@ -116,9 +116,9 @@ kubectl get service lineten-service -n lineten
 
 The output will be similar to the following:
 ```
-![image](https://github.com/user-attachments/assets/82469c07-f0ed-4c23-80fb-41a3cdf109c1)
-
-
+kubectl get service lineten-service -n lineten
+NAME              TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)          AGE
+lineten-service   LoadBalancer   10.0.179.167   98.67.238.159   8080:30604/TCP   7h30m
 ```
 
 Where 98.67.238.159 is the external IP on which our service is available
